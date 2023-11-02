@@ -83,7 +83,9 @@ fn main() {
         let mut end = start;
         let mut width = 0;
         while width < term_col {
+            // check while it still contains some space
             if end == words.len() {
+                // reached end of string
                 break;
             }
             let code = words[end] as u32;
@@ -92,7 +94,13 @@ fn main() {
                 CharWidth::Width8 => 8,
                 CharWidth::Width16 => 16,
             };
+            // don't push if it exceeds terminal width
+            if width + char_width > term_col {
+                break;
+            }
             width += char_width;
+            // here it's safe to push -- we make sure that
+            // [start, end) does not exceed terminal width
             end += 1;
         }
         assert!(end <= words.len());
