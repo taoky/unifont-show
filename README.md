@@ -17,6 +17,7 @@ Put unifont to same directory as executable's cwd.
 # Change to a GNU mirror near to you if it's slow.
 wget https://mirror.us-midwest-1.nexcess.net/gnu/unifont/unifont-15.1.02/unifont_all-15.1.02.hex.gz
 gunzip unifont_all-15.1.02.hex.gz
+mv unifont_all-15.1.02.hex unifont_all.hex
 ```
 
 And then

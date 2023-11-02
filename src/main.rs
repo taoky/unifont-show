@@ -37,7 +37,7 @@ fn main() {
         exit(1);
     }
 
-    let hexfile = "./unifont_all-15.1.02.hex";
+    let hexfile = "./unifont_all.hex";
     let file = File::open(hexfile).unwrap();
     let mut mapping = HashMap::new();
     for line in BufReader::new(file).lines() {
